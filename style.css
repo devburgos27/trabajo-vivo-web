@@ -264,37 +264,60 @@ ul {
 }
 
 /* =========================================
-   7. BLOG / NOTICIAS
+   SECCIÓN DE PROYECTOS (PORTAFOLIO)
    ========================================= */
-.news-preview {
+.projects-section {
     padding: var(--section-padding);
+    background-color: #f4f7f6; /* Fondo ligeramente diferente para separar secciones */
 }
 
-.news-grid {
+.projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Crea columnas automáticas, mínimo 400px de ancho (para que se vean grandes) */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-top: 40px;
 }
 
-.news-item {
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 5px;
+.project-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden; /* Esto hace que la imagen respete las esquinas redondeadas */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
 }
 
-.news-item .date {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    color: var(--accent-color);
-    font-weight: bold;
-    display: block;
+.project-card:hover {
+    transform: translateY(-5px); /* Pequeña elevación al pasar el mouse */
+}
+
+/* Contenedor de la imagen para asegurar el tamaño */
+.project-image {
+    width: 100%;
+    height: 250px; /* Altura fija para todas las fotos */
+    background-color: #ddd; /* Color de fondo si no carga la imagen */
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* CLAVE: Recorta la imagen para llenar el espacio sin estirarla */
+    object-position: center;
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
     margin-bottom: 10px;
 }
 
-.news-item h5 {
-    font-size: 1.1rem;
-    color: var(--primary-color);
+.project-content p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 /* =========================================
