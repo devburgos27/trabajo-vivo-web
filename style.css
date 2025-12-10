@@ -124,6 +124,9 @@ ul {
     background-color: var(--primary-color);
     color: var(--white) !important;
 }
+.main-nav i {
+    margin-right: 8px;
+}
 
 /* =========================================
    4. HERO SECTION (Inicio)
