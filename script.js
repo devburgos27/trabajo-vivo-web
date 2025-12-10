@@ -1,30 +1,51 @@
 // Esperamos a que todo el HTML cargue antes de ejecutar el código
 document.addEventListener("DOMContentLoaded", function () {
   // ==========================================
-  // 1. MANEJO DEL FORMULARIO DE CONTACTO
+  // 1. MANEJO DEL FORMULARIO DE CONTACTO (ENVÍO REAL)
   // ==========================================
   const contactForm = document.querySelector(".contact-form");
 
   if (contactForm) {
     contactForm.addEventListener("submit", function (event) {
-      // Prevenir que la página se recargue al enviar
-      event.preventDefault();
+      event.preventDefault(); // Evita recargar la página
 
-      // Aquí capturaríamos los datos si tuviéramos un backend
-      const nombre = contactForm.querySelector('input[type="text"]').value;
-      const email = contactForm.querySelector('input[type="email"]').value;
+      // El correo donde llegará la info (Cámbialo aquí cuando quieras)
+      const destino = "donweasxd@gmail.com";
+      const endpoint = `https://formsubmit.co/ajax/${destino}`;
 
-      // Simulación de envío (Feedback para el usuario)
-      if (nombre && email) {
-        alert(
-          `¡Gracias ${nombre}! Hemos recibido tu mensaje. Nos pondremos en contacto contigo en ${email} pronto.`
-        );
+      // Cambiamos el botón para que sepa que está cargando
+      const boton = contactForm.querySelector("button");
+      const textoOriginal = boton.innerHTML;
+      boton.innerHTML =
+        'Enviando... <i class="fa-solid fa-spinner fa-spin"></i>';
+      boton.disabled = true;
 
-        // Limpiar el formulario
-        contactForm.reset();
-      } else {
-        alert("Por favor, completa todos los campos.");
-      }
+      // Recopilamos los datos
+      const formData = new FormData(contactForm);
+
+      // Enviamos los datos al servidor
+      fetch(endpoint, {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // Si todo sale bien:
+          alert(
+            "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto."
+          );
+          contactForm.reset(); // Limpia el formulario
+        })
+        .catch((error) => {
+          // Si algo falla:
+          alert("Hubo un error al enviar. Por favor intenta nuevamente.");
+          console.error("Error:", error);
+        })
+        .finally(() => {
+          // Restauramos el botón
+          boton.innerHTML = textoOriginal;
+          boton.disabled = false;
+        });
     });
   }
 
@@ -68,29 +89,45 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   // ==========================================
-  // 4. DESPLEGAR EQUIPO
+  // 4. DESPLEGAR EQUIPO (CON ANIMACIÓN DE CIERRE)
   // ==========================================
   const btnConocenos = document.getElementById("btn-conocenos");
   const teamContainer = document.getElementById("team-container");
 
   if (btnConocenos && teamContainer) {
     btnConocenos.addEventListener("click", function (e) {
-      e.preventDefault(); // Evita que la página salte
+      e.preventDefault();
 
-      // Alternar la clase visible
+      // Verificamos si ya está visible
       if (teamContainer.classList.contains("team-visible")) {
-        // Si está abierto, lo cerramos
-        teamContainer.classList.remove("team-visible");
-        teamContainer.style.display = "none"; // Espera css pero forzamos por seguridad
-        btnConocenos.textContent = "Conócenos más"; // Cambia el texto del botón
-      } else {
-        // Si está cerrado, lo abrimos
-        teamContainer.style.display = "block"; // Asegura display block antes de animar
-        setTimeout(() => {
-          teamContainer.classList.add("team-visible");
-        }, 10); // Pequeño delay para permitir la animación CSS
+        // --- PROCESO DE CERRAR (NUEVO) ---
 
-        btnConocenos.textContent = "Ocultar equipo"; // Cambia el texto del botón
+        // 1. Cambiamos el texto del botón inmediatamente
+        btnConocenos.textContent = "Conócenos más";
+
+        // 2. Quitamos la clase de visibilidad para que la opacidad baje a 0
+        // (Gracias a que en CSS pusiste 'transition: opacity 1.2s', esto será suave)
+        teamContainer.classList.remove("team-visible");
+
+        // 3. Esperamos 1200ms (1.2 segundos) a que termine el desvanecimiento
+        setTimeout(function () {
+          // Solo después de esperar, quitamos la caja del espacio físico
+          teamContainer.style.display = "none";
+        }, 1200); // Este número debe coincidir con tu tiempo en el CSS
+      } else {
+        // --- PROCESO DE ABRIR ---
+
+        // 1. Primero hacemos que exista en el espacio físico
+        teamContainer.style.display = "block";
+
+        // 2. Un pequeño respiro para que el navegador procese el cambio de display
+        setTimeout(() => {
+          // Agregamos la clase para que suba la opacidad a 1
+          teamContainer.classList.add("team-visible");
+        }, 10);
+
+        // 3. Cambiamos el texto del botón
+        btnConocenos.textContent = "Ocultar equipo";
       }
     });
   }
