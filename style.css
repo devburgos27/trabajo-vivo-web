@@ -183,12 +183,25 @@ ul {
     border-color: var(--accent-color);
 }
 
-.service-number {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #e0e0e0; /* Gris muy claro para el número de fondo */
-    display: block;
-    margin-bottom: 10px;
+.service-icon {
+    font-size: 2.5rem;          
+    color: var(--accent-color); 
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+.service-icon i {
+    background-color: #e8f5e9; 
+    width: 80px;
+    height: 80px;
+    line-height: 80px;          
+    border-radius: 50%;         
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon i {
+    background-color: var(--accent-color); 
+    color: white; 
 }
 
 .service-card h4 {
