@@ -1,225 +1,395 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabajo Vivo - Cooperativa de Trabajo para el Desarrollo Local</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    </head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Trabajo Vivo - Cooperativa de Trabajo para el Desarrollo Local
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header class="main-header">
-        <div class="container">
+      <div class="container">
         <div class="logo">
-            <a href="#inicio">
-                <img src="img/logo-trabajovivo.png" alt="Logo Cooperativa Trabajo Vivo">
-            </a>
+          <a href="#inicio">
+            <img
+              src="img/logo-trabajovivo.png"
+              alt="Logo Cooperativa Trabajo Vivo"
+            />
+          </a>
         </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#inicio"><i class="fa-solid fa-house"></i> Inicio</a></li>
-                    <li><a href="#somos"><i class="fa-solid fa-users"></i> Somos</a></li>
-                    <li><a href="#servicios"><i class="fa-solid fa-briefcase"></i> Servicios</a></li>
-                    <li><a href="#proyectos"><i class="fa-solid fa-diagram-project"></i> Proyectos</a></li>
-                    <li><a href="#contacto" class="btn-nav"><i class="fa-solid fa-envelope"></i> Escríbenos</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="main-nav">
+          <ul>
+            <li>
+              <a href="#inicio"><i class="fa-solid fa-house"></i> Inicio</a>
+            </li>
+            <li>
+              <a href="#somos"><i class="fa-solid fa-users"></i> Somos</a>
+            </li>
+            <li>
+              <a href="#servicios"
+                ><i class="fa-solid fa-briefcase"></i> Servicios</a
+              >
+            </li>
+            <li>
+              <a href="#proyectos"
+                ><i class="fa-solid fa-diagram-project"></i> Proyectos</a
+              >
+            </li>
+            <li>
+              <a href="#contacto" class="btn-nav"
+                ><i class="fa-solid fa-envelope"></i> Escríbenos</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
+      <section id="inicio" class="hero-section">
+        <div class="container">
+          <h2>Para organizaciones que construyen futuro cooperativo</h2>
+          <p class="hero-subtitle">
+            Acompañamos a quienes creen en la ayuda mutua y trabajan por otra
+            forma de hacer economía. Ofrecemos herramientas claras, apoyo
+            cercano y soluciones hechas a medida para fortalecer proyectos
+            cooperativos y asociativos desde la práctica.
+          </p>
+          <a href="#servicios" class="btn-primary">Ir a Servicios</a>
+        </div>
+      </section>
 
-        <section id="inicio" class="hero-section">
-            <div class="container">
-                <h2>Para organizaciones que construyen futuro cooperativo</h2>
-                <p class="hero-subtitle">
-                    Acompañamos a quienes creen en la ayuda mutua y trabajan por otra forma de hacer economía. 
-                    Ofrecemos herramientas claras, apoyo cercano y soluciones hechas a medida para fortalecer 
-                    proyectos cooperativos y asociativos desde la práctica.
+      <section id="servicios" class="portfolio-section">
+        <div class="container">
+          <h3 class="section-title">Nuestros Servicios</h3>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-file-signature"></i>
+              </div>
+              <h4>Formaliza tu cooperativa</h4>
+              <p>
+                Tenemos distintos planes para acompañarte, o darte las
+                herramientas necesarias para que puedas formalizar tu
+                cooperativa.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-users-gear"></i>
+              </div>
+              <h4>Mejora tu gobernanza y participación</h4>
+              <p>
+                Tenemos distintas clínicas, talleres y materiales para ayudarte
+                con la gobernanza y participación de tu cooperativa.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <h4>Fortalece tu modelo de negocio</h4>
+              <p>
+                Te ofrecemos nuestros más de diez años de experiencia para
+                ayudarte con diversas herramientas a fortalecer tu negocio.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-laptop-file"></i>
+              </div>
+              <h4>Organiza y digitaliza tu gestión</h4>
+              <p>
+                Te ofrecemos distintas plantillas y formas de ordenar y
+                digitalizar tus gestiones.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+              <h4>Evalúa tu organización y aprende</h4>
+              <p>
+                Te ayudamos a realizar una mirada integral de tu organización y
+                ver cómo y en qué pueden mejorar.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <h4>Autogestiona la educación cooperativa</h4>
+              <p>
+                Diseñamos iniciativas formativas y educativas adaptadas a la
+                realidad de los territorios y comunidades.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-wifi"></i></div>
+              <h4>Gestiona cooperativamente las tecnologías</h4>
+              <p>
+                Impulsamos la soberanía tecnológica implementando herramientas
+                digitales, radios comunitarias e infraestructura de internet
+                local.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="somos" class="about-section">
+        <div class="container split-layout">
+          <div class="about-text">
+            <h3>Cooperativa Trabajo Vivo</h3>
+            <p class="highlight">
+              Cooperativa de Trabajo para el Desarrollo Local y la Economía
+              Solidaria
+            </p>
+            <a id="btn-conocenos" href="#" class="btn-secondary"
+              >Conócenos más</a
+            >
+          </div>
+          <div class="about-image">
+            <img
+              src="img/equipo.png"
+              alt="Foto del equipo de la Cooperativa Trabajo Vivo"
+            />
+          </div>
+        </div>
+        <div id="team-container" class="team-hidden">
+          <h3 class="team-title">Nuestro Equipo</h3>
+          <div class="team-grid">
+            <div class="team-member">
+              <div class="member-photo">
+                <img src="img/miembro1.jpg" alt="Foto de Miembro 1" />
+              </div>
+              <h4>Nombre Apellido</h4>
+              <span class="member-role">Gerente General</span>
+              <p class="member-legend">
+                "La cooperación es la convicción plena de que nadie puede llegar
+                a la meta si no llegan todos."
+              </p>
+
+              <div class="member-social">
+                <a href="mailto:correo@trabajovivo.cl" title="Enviar Correo">
+                  <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="#" target="_blank" title="LinkedIn">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="#" target="_blank" title="Facebook">
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="team-member">
+              <div class="member-photo">
+                <img src="img/miembro2.jpg" alt="Foto de Miembro 2" />
+              </div>
+              <h4>Nombre Apellido</h4>
+              <span class="member-role">Coordinador de Proyectos</span>
+              <p class="member-legend">
+                "Construyendo soluciones desde los territorios."
+              </p>
+              <div class="member-social">
+                <a href="mailto:correo@trabajovivo.cl"
+                  ><i class="fa-solid fa-envelope"></i
+                ></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              </div>
+            </div>
+
+            <div class="team-member">
+              <div class="member-photo">
+                <img src="img/miembro3.jpg" alt="Foto de Miembro 3" />
+              </div>
+              <h4>Nombre Apellido</h4>
+              <span class="member-role">Encargada de Finanzas</span>
+              <p class="member-legend">
+                "Transparencia y orden para el bien común."
+              </p>
+              <div class="member-social">
+                <a href="mailto:correo@trabajovivo.cl"
+                  ><i class="fa-solid fa-envelope"></i
+                ></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="proyectos" class="projects-section">
+        <div class="container">
+          <h3 class="section-title">Proyectos Destacados</h3>
+          <p style="text-align: center; margin-bottom: 40px; color: #666">
+            Conoce algunas de las iniciativas que hemos impulsado junto a las
+            comunidades.
+          </p>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-image">
+                <img src="img/proyecto1.jpg" alt="Foto del Proyecto 1" />
+              </div>
+              <div class="project-content">
+                <h4>Torre del Maestro Karin</h4>
+                <p>
+                  La Torre de Karin (カリン塔とう Karin-tō¿?) es una torre
+                  situada en la tierra sagrada de Karin, debajo del palacio de
+                  Kami, en su cima se encuentra Yajirobei y el gato maestro
+                  Karin quien entrenaría a los Guerreros Z a lo largo de la
+                  serie.
                 </p>
-                <a href="#servicios" class="btn-primary">Ir a Servicios</a>
-            </div>
-        </section>
-
-<section id="servicios" class="portfolio-section">
-    <div class="container">
-        <h3 class="section-title">Nuestros Servicios</h3>
-        
-        <div class="services-grid">
-            <article class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
-                <h4>Formaliza tu cooperativa</h4>
-                <p>Tenemos distintos planes para acompañarte, o darte las herramientas necesarias para que puedas formalizar tu cooperativa.</p>
+              </div>
             </article>
 
-            <article class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-users-gear"></i></div>
-                <h4>Mejora tu gobernanza y participación</h4>
-                <p>Tenemos distintas clínicas, talleres y materiales para ayudarte con la gobernanza y participación de tu cooperativa.</p>
+            <article class="project-card">
+              <div class="project-image">
+                <img src="img/proyecto2.webp" alt="Foto del Proyecto 2" />
+              </div>
+              <div class="project-content">
+                <h4>El Edificio Baxter</h4>
+                <p>
+                  El Edificio Baxter es un edificio ficticio de oficinas con 35
+                  pisos que aparece en los cómics estadounidenses publicados por
+                  Marvel Comics. El edificio está representado en Manhattan, y
+                  sus cinco plantas superiores albergan las oficinas centrales
+                  de Los 4 Fantásticos.​​​
+                </p>
+              </div>
             </article>
 
-            <article class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
-                <h4>Fortalece tu modelo de negocio</h4>
-                <p>Te ofrecemos nuestros más de diez años de experiencia para ayudarte con diversas herramientas a fortalecer tu negocio.</p>
+            <article class="project-card">
+              <div class="project-image">
+                <img src="img/proyecto3.jpg" alt="Foto del Proyecto 3" />
+              </div>
+              <div class="project-content">
+                <h4>Pueblo Lavanda</h4>
+                <p>
+                  Pueblo Lavanda es un pueblo ficticio de los videojuegos
+                  Pokémon Rojo y Azul. Representado como una localización
+                  encantada, el Pueblo Lavanda alberga un cementerio de estilo
+                  japonés
+                </p>
+              </div>
             </article>
 
-            <article class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-laptop-file"></i></div>
-                <h4>Organiza y digitaliza tu gestión</h4>
-                <p>Te ofrecemos distintas plantillas y formas de ordenar y digitalizar tus gestiones.</p>
+            <article class="project-card">
+              <div class="project-image">
+                <img src="img/proyecto4.webp" alt="Foto del Proyecto 4" />
+              </div>
+              <div class="project-content">
+                <h4>⁠El Abismo de Helm</h4>
+                <p>
+                  El Abismo de Helm es un desfiladero y fortaleza ficticia del
+                  mundo de Tolkien, conocido principalmente por la Batalla del
+                  Abismo de Helm, que tuvo lugar en la novela El Señor de los
+                  Anillos. Se encuentra en la región de Rohan, al pie de las
+                  Montañas Blancas, y fue escenario de la heroica defensa del
+                  pueblo de Rohan contra el ejército de Saruman.
+                </p>
+              </div>
             </article>
-
-            <article class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                <h4>Evalúa tu organización y aprende</h4>
-                <p>Te ayudamos a realizar una mirada integral de tu organización y ver cómo y en qué pueden mejorar.</p>
-            </article>
-
-            <article class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h4>Autogestiona la educación cooperativa</h4>
-                <p>Diseñamos iniciativas formativas y educativas adaptadas a la realidad de los territorios y comunidades.</p>
-            </article>
-
-            <article class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-wifi"></i></div>
-                <h4>Gestiona cooperativamente las tecnologías</h4>
-                <p>Impulsamos la soberanía tecnológica implementando herramientas digitales, radios comunitarias e infraestructura de internet local.</p>
-            </article>
+          </div>
         </div>
-    </div>
-</section>
+      </section>
 
-        <section id="somos" class="about-section">
-            <div class="container split-layout">
-                <div class="about-text">
-                    <h3>Cooperativa Trabajo Vivo</h3>
-                    <p class="highlight">Cooperativa de Trabajo para el Desarrollo Local y la Economía Solidaria</p>
-                    <a href="#" class="btn-secondary">Conócenos más</a>
-                </div>
-                    <div class="about-image">
-                        <img src="img/equipo.png" alt="Foto del equipo de la Cooperativa Trabajo Vivo">
-                    </div>
+      <section id="contacto" class="contact-section">
+        <div class="container">
+          <h3>Conversemos</h3>
+          <p>¿En qué te podemos ayudar? Escríbenos, sin compromisos.</p>
+
+          <div class="contact-layout">
+            <div class="contact-info">
+              <p><strong>Email:</strong> contacto@trabajovivo.cl</p>
+              <p><strong>Teléfono:</strong> +56 9 50457497</p>
+              <p><strong>Ubicación:</strong> Temuco, Región de La Araucanía</p>
             </div>
-        </section>
 
-        <section id="proyectos" class="projects-section">
-    <div class="container">
-        <h3 class="section-title">Proyectos Destacados</h3>
-        <p style="text-align: center; margin-bottom: 40px; color: #666;">
-            Conoce algunas de las iniciativas que hemos impulsado junto a las comunidades.
-        </p>
-        
-        <div class="projects-grid">
-            
-            <article class="project-card">
-                <div class="project-image">
-                    <img src="img/proyecto1.jpg" alt="Foto del Proyecto 1">
-                </div>
-                <div class="project-content">
-                    <h4>Torre del Maestro Karin</h4>
-                    <p>La Torre de Karin (カリン塔とう Karin-tō¿?) es una torre situada en la tierra sagrada de Karin, debajo del palacio de Kami, en su cima se encuentra Yajirobei y el gato maestro Karin quien entrenaría a los Guerreros Z a lo largo de la serie.</p>
-                </div>
-            </article>
-
-            <article class="project-card">
-                <div class="project-image">
-                    <img src="img/proyecto2.webp" alt="Foto del Proyecto 2">
-                </div>
-                <div class="project-content">
-                    <h4>El Edificio Baxter</h4>
-                    <p>El Edificio Baxter es un edificio ficticio de oficinas con 35 pisos que aparece en los cómics estadounidenses publicados por Marvel Comics. El edificio está representado en Manhattan, y sus cinco plantas superiores albergan las oficinas centrales de Los 4 Fantásticos.​​​</p>
-                </div>
-            </article>
-
-            <article class="project-card">
-                <div class="project-image">
-                    <img src="img/proyecto3.jpg" alt="Foto del Proyecto 3">
-                </div>
-                <div class="project-content">
-                    <h4>Pueblo Lavanda</h4>
-                    <p>Pueblo Lavanda es un pueblo ficticio de los videojuegos Pokémon Rojo y Azul. Representado como una localización encantada, el Pueblo Lavanda alberga un cementerio de estilo japonés</p>
-                </div>
-            </article>
-
-            <article class="project-card">
-                <div class="project-image">
-                    <img src="img/proyecto4.webp" alt="Foto del Proyecto 4">
-                </div>
-                <div class="project-content">
-                    <h4>⁠El Abismo de Helm</h4>
-                    <p>El Abismo de Helm es un desfiladero y fortaleza ficticia del mundo de Tolkien, conocido principalmente por la Batalla del Abismo de Helm, que tuvo lugar en la novela El Señor de los Anillos. Se encuentra en la región de Rohan, al pie de las Montañas Blancas, y fue escenario de la heroica defensa del pueblo de Rohan contra el ejército de Saruman.</p>
-                </div>
-            </article>
-
+            <form class="contact-form">
+              <input type="text" placeholder="Tu Nombre" required />
+              <input type="email" placeholder="Tu Email" required />
+              <textarea
+                placeholder="Cuéntanos sobre tu proyecto..."
+                rows="5"
+                required
+              ></textarea>
+              <button type="submit" class="btn-primary">
+                Enviar Cotización
+                <i class="fa-solid fa-paper-plane" style="margin-left: 8px"></i>
+              </button>
+            </form>
+          </div>
         </div>
-    </div>
-</section>
-
-        <section id="contacto" class="contact-section">
-            <div class="container">
-                <h3>Conversemos</h3>
-                <p>¿En qué te podemos ayudar? Escríbenos, sin compromisos.</p>
-                
-                <div class="contact-layout">
-                    <div class="contact-info">
-                        <p><strong>Email:</strong> contacto@trabajovivo.cl</p>
-                        <p><strong>Teléfono:</strong> +56 9 50457497</p>
-                        <p><strong>Ubicación:</strong> Temuco, Región de La Araucanía</p>
-                    </div>
-                    
-                    <form class="contact-form">
-                        <input type="text" placeholder="Tu Nombre" required>
-                        <input type="email" placeholder="Tu Email" required>
-                        <textarea placeholder="Cuéntanos sobre tu proyecto..." rows="5" required></textarea>
-                        <button type="submit" class="btn-primary">
-                        Enviar Cotización <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
+      </section>
     </main>
 
     <footer class="main-footer">
-        <div class="container">
-            <div class="footer-columns">
-                <div class="col">
-                    <h4>Trabajo Vivo</h4>
-                    <p>Cooperativa de Trabajo para el Desarrollo Local y la Economía Solidaria</p>
-                </div>
-                <div class="col">
-                    <h4>Menu</h4>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#somos">Somos</a></li>
-                    </ul>
-                </div>
-                <div class="col">
-<div class="col">
-    <h4>Síguenos</h4>
-    <p class="social-links">
-        <a href="https://www.instagram.com/trabajovivo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-        
-        <a href="https://www.facebook.com/trabajovivo/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <i class="fa-brands fa-facebook"></i>
-        </a>
-    </p>
-</div>
-</div>
+      <div class="container">
+        <div class="footer-columns">
+          <div class="col">
+            <h4>Trabajo Vivo</h4>
+            <p>
+              Cooperativa de Trabajo para el Desarrollo Local y la Economía
+              Solidaria
+            </p>
+          </div>
+          <div class="col">
+            <h4>Menu</h4>
+            <ul>
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="#somos">Somos</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <div class="col">
+              <h4>Síguenos</h4>
+              <p class="social-links">
+                <a
+                  href="https://www.instagram.com/trabajovivo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/trabajovivo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+              </p>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 Trabajo Vivo. Todos los derechos reservados.</p>
-            </div>
+          </div>
         </div>
+        <div class="copyright">
+          <p>&copy; 2025 Trabajo Vivo. Todos los derechos reservados.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
