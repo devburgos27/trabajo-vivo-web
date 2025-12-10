@@ -403,6 +403,22 @@ ul {
     padding-top: 20px;
     font-size: 0.9rem;
 }
+.social-links {
+    display: flex;
+    gap: 20px; 
+}
+
+.social-links a {
+    color: #aaa;
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
 
 /* =========================================
    10. RESPONSIVE (Móvil)
@@ -447,17 +463,6 @@ ul {
     background-color: rgba(255, 255, 255, 0.98); /* Blanco casi opaco */
     box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra suave */
     padding: 10px 0; /* Se hace un poco más pequeño para estorbar menos */
-}
-/* Estilos para los links del footer */
-.social-links a {
-    color: #aaa; /* Color gris inicial */
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--accent-color); /* Se pone verde (o el color acento) al pasar el mouse */
 }
 /* NUEVO ESTILO PARA EL LOGO DE IMAGEN */
 .logo img {
