@@ -97,11 +97,6 @@ ul {
     align-items: center;
 }
 
-.logo h1 {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    font-weight: 800;
-}
 
 .main-nav ul {
     display: flex;
@@ -441,14 +436,19 @@ ul {
 .social-links a:hover {
     color: var(--accent-color); /* Se pone verde (o el color acento) al pasar el mouse */
 }
-/* Agrega esto para que el link del logo se vea bien */
-.logo a {
-    text-decoration: none;       /* Quita el subrayado */
-    color: var(--primary-color); /* Mantiene tu color azul oscuro */
-    cursor: pointer;             /* Asegura que salga la manito al pasar el mouse */
-    transition: opacity 0.3s;
+/* NUEVO ESTILO PARA EL LOGO DE IMAGEN */
+.logo img {
+    /* Define un ancho máximo para que no se vea gigante */
+    max-width: 130px; 
+    /* Altura automática para mantener la proporción */
+    height: auto; 
+    /* Elimina un pequeño espacio extra que a veces queda debajo de las imágenes */
+    display: block; 
+    /* Efecto suave al pasar el mouse */
+    transition: opacity 0.3s ease;
 }
 
-.logo a:hover {
-    opacity: 0.8; /* Un pequeño efecto visual al pasar el mouse */
+.logo img:hover {
+    /* Se vuelve un poquito transparente al pasar el mouse para indicar que es un enlace */
+    opacity: 0.9; 
 }
