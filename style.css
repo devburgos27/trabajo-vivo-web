@@ -1,17 +1,14 @@
-/* =========================================
-   1. VARIABLES Y RESET (Base del diseño)
-   ========================================= */
+/*1. VARIABLES Y RESET (Base del diseño)*/
 :root {
-  /* Paleta de Colores inspirada en Trabajo Vivo */
-  --primary-color: #1d94bd; /* Azul oscuro corporativo */
-  --accent-color: #3cb64b; /* Verde vivo para botones y detalles */
-  --text-color: #333333; /* Gris oscuro para lectura */
-  --text-light: #666666; /* Gris suave para subtítulos */
-  --bg-light: #f9f9f9; /* Fondo gris muy suave */
-  --white: #ffffff;
+  --primary-color: #1d94bd;
+  --accent-color: #3cb64b; 
   --highlight-color: #f4a623;
+  --text-color: #333333;
+  --text-light: #666666;
+  --white: #ffffff;
+  --bg-light: #F5F7FA;
+  --border-color: #E1E5EB;
 
-  /* Espaciado estándar */
   --container-width: 1100px;
   --section-padding: 80px 0;
 }
@@ -23,11 +20,11 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fuente limpia */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--white);
-  scroll-behavior: smooth; /* Desplazamiento suave al navegar */
+  scroll-behavior: smooth;
 }
 
 a {
@@ -39,9 +36,7 @@ ul {
   list-style: none;
 }
 
-/* =========================================
-   2. COMPONENTES REUTILIZABLES
-   ========================================= */
+/*2. COMPONENTES REUTILIZABLES*/
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
@@ -50,16 +45,32 @@ ul {
 
 .btn-primary {
   display: inline-block;
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   color: var(--white);
   padding: 12px 30px;
   border-radius: 5px;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s;
+  border: none;
 }
 
 .btn-primary:hover {
-  background-color: #219150; /* Un verde un poco más oscuro */
+  background-color: #157a9e;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  color: var(--accent-color);
+  font-weight: bold;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 2px;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.btn-secondary:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .section-title {
@@ -68,28 +79,36 @@ ul {
   margin-bottom: 50px;
   color: var(--primary-color);
   position: relative;
+  font-weight: 700;
 }
 
-/* Pequeña línea decorativa bajo los títulos */
 .section-title::after {
   content: "";
   display: block;
   width: 60px;
-  height: 3px;
+  height: 4px;
   background: var(--accent-color);
   margin: 10px auto 0;
+  border-radius: 2px;
 }
 
-/* =========================================
-   3. HEADER Y NAVEGACIÓN
-   ========================================= */
+/*3. HEADER Y NAVEGACIÓN*/
 .main-header {
   background-color: var(--white);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky; /* El menú se queda pegado arriba */
+  /* Sombra más sutil */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
   top: 0;
   z-index: 1000;
   padding: 15px 0;
+  transition: all 0.3s ease;
+}
+
+.main-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
 }
 
 .main-header .container {
@@ -106,16 +125,22 @@ ul {
 
 .main-nav a {
   font-weight: 500;
-  color: var(--primary-color);
+  color: var(--text-color);
   transition: color 0.3s;
 }
 
 .main-nav a:hover {
+  color: var(--primary-color);
+}
+
+.main-nav i {
+  margin-right: 8px;
   color: var(--accent-color);
 }
 
 .btn-nav {
   border: 2px solid var(--primary-color);
+  color: var(--primary-color) !important;
   padding: 8px 20px;
   border-radius: 20px;
 }
@@ -124,15 +149,20 @@ ul {
   background-color: var(--primary-color);
   color: var(--white) !important;
 }
-.main-nav i {
-  margin-right: 8px;
+
+.logo img {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+.logo img:hover {
+  opacity: 0.9;
 }
 
-/* =========================================
-   4. HERO SECTION (Inicio)
-   ========================================= */
+/*4. HERO SECTION (Inicio)*/
 .hero-section {
-  background-color: #f0f4f8; /* Un azul muy pálido de fondo */
+  background-color: var(--bg-light);
   padding: 100px 0;
   text-align: center;
 }
@@ -151,19 +181,16 @@ ul {
   margin: 0 auto 30px;
 }
 
-/* =========================================
-   5. SERVICIOS (Grilla tipo Portafolio)
-   ========================================= */
+/*5. SERVICIOS (Grilla tipo Portafolio)*/
 .portfolio-section {
   padding: var(--section-padding);
+  background-color: var(--white);
 }
 
 .services-grid {
   display: grid;
-  /* Esto asegura columnas de ancho flexible pero mínimo 300px */
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
-  /* Esto ayuda a centrar las tarjetas si en una pantalla grande sobra espacio */
   justify-content: center;
 }
 
@@ -171,19 +198,19 @@ ul {
   background: var(--white);
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  border-top: 4px solid transparent;
-  transition: transform 0.3s, border-color 0.3s;
-
-  /* PROPIEDADES NUEVAS: */
-  display: flex; /* Convierte la tarjeta en un contenedor flexible */
-  flex-direction: column; /* Organiza el contenido verticalmente */
-  height: 100%; /* Fuerza a que todas las tarjetas de la fila tengan el mismo alto */
+  border: 1px solid var(--border-color); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .service-card:hover {
-  transform: translateY(-5px); /* Efecto de elevación */
-  border-color: var(--accent-color);
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .service-icon {
@@ -194,7 +221,7 @@ ul {
 }
 
 .service-icon i {
-  background-color: #e8f5e9;
+  background-color: rgba(60, 182, 75, 0.1);
   width: 80px;
   height: 80px;
   line-height: 80px;
@@ -216,12 +243,16 @@ ul {
 .service-card p {
   color: var(--text-light);
   font-size: 0.95rem;
-  flex-grow: 1; /* Hace que el texto ocupe el espacio disponible */
+  flex-grow: 1;
 }
 
-/* =========================================
-   6. SECCIÓN SOMOS
-   ========================================= */
+@media (min-width: 992px) {
+  .service-card:nth-child(7) {
+    grid-column: 2;
+  }
+}
+
+/*6. SECCIÓN SOMOS*/
 .about-section {
   padding: var(--section-padding);
   background-color: var(--bg-light);
@@ -250,19 +281,13 @@ ul {
   font-weight: 500;
 }
 
-.btn-secondary {
-  display: inline-block;
-  color: var(--primary-color);
-  font-weight: bold;
-  border-bottom: 2px solid var(--accent-color);
-}
-
 .about-image {
   flex: 1;
   height: 400px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
 }
 .about-image img {
   width: 100%;
@@ -271,28 +296,15 @@ ul {
   object-position: center;
   display: block;
 }
-/* =========================================
-   AJUSTE DE ALINEACIÓN PARA TARJETA 07
-   ========================================= */
 
-/* Esta regla solo aplica en pantallas grandes (Desktop) */
-@media (min-width: 992px) {
-  .service-card:nth-child(7) {
-    grid-column: 2;
-  }
-}
-
-/* =========================================
-   SECCIÓN DE PROYECTOS (PORTAFOLIO)
-   ========================================= */
+/*SECCIÓN DE PROYECTOS (PORTAFOLIO)*/
 .projects-section {
   padding: var(--section-padding);
-  background-color: #f4f7f6; /* Fondo ligeramente diferente para separar secciones */
+  background-color: var(--white);
 }
 
 .projects-grid {
   display: grid;
-  /* Crea columnas automáticas, mínimo 400px de ancho (para que se vean grandes) */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
@@ -300,26 +312,27 @@ ul {
 .project-card {
   background: var(--white);
   border-radius: 10px;
-  overflow: hidden; /* Esto hace que la imagen respete las esquinas redondeadas */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, border-color 0.3s;
 }
 
 .project-card:hover {
-  transform: translateY(-5px); /* Pequeña elevación al pasar el mouse */
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
 }
 
-/* Contenedor de la imagen para asegurar el tamaño */
 .project-image {
   width: 100%;
-  height: 250px; /* Altura fija para todas las fotos */
-  background-color: #ddd; /* Color de fondo si no carga la imagen */
+  height: 250px;
+  background-color: #ddd;
 }
 
 .project-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* CLAVE: Recorta la imagen para llenar el espacio sin estirarla */
+  object-fit: cover;
   object-position: center;
 }
 
@@ -339,9 +352,7 @@ ul {
   line-height: 1.6;
 }
 
-/* =========================================
-   8. CONTACTO
-   ========================================= */
+/*8. CONTACTO */
 .contact-section {
   padding: var(--section-padding);
   background-color: var(--primary-color);
@@ -387,13 +398,19 @@ ul {
   cursor: pointer;
   border: none;
   font-size: 1rem;
+  background-color: var(--white);
+  color: var(--primary-color);
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
-/* =========================================
-   9. FOOTER
-   ========================================= */
+.contact-form button:hover {
+  background-color: var(--accent-color);
+}
+
+/*9. FOOTER*/
 .main-footer {
-  background-color: #11263a; /* Un azul casi negro */
+  background-color: #11263a;
   color: #aaa;
   padding: 50px 0 20px;
 }
@@ -414,7 +431,7 @@ ul {
 }
 
 .footer-columns a:hover {
-  color: var(--accent-color);
+  color: var(--highlight-color);
 }
 
 .copyright {
@@ -423,6 +440,7 @@ ul {
   padding-top: 20px;
   font-size: 0.9rem;
 }
+
 .social-links {
   display: flex;
   gap: 20px;
@@ -436,13 +454,11 @@ ul {
 }
 
 .social-links a:hover {
-  color: var(--accent-color);
+  color: var(--highlight-color);
   transform: translateY(-3px);
 }
 
-/* =========================================
-   10. RESPONSIVE (Móvil)
-   ========================================= */
+/*10. RESPONSIVE (Móvil)*/
 @media (max-width: 768px) {
   .main-header .container {
     flex-direction: column;
@@ -466,70 +482,30 @@ ul {
   }
 
   .about-image {
-    order: -1; /* Pone la imagen primero en móvil */
+    order: -1;
     height: 250px;
   }
 }
-/* --- Agrega esto al final de tu CSS para que funcione el script --- */
 
-/* Estado inicial del header: Transparente o plano */
-.main-header {
-  transition: all 0.3s ease;
-  box-shadow: none; /* Quitamos la sombra inicial */
-}
-
-/* Estado cuando bajamos (Scrolled): Aparece la sombra y fondo blanco puro */
-.main-header.scrolled {
-  background-color: rgba(255, 255, 255, 0.98); /* Blanco casi opaco */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  padding: 10px 0; /* Se hace un poco más pequeño para estorbar menos */
-}
-/* NUEVO ESTILO PARA EL LOGO DE IMAGEN */
-.logo img {
-  /* Define un ancho máximo para que no se vea gigante */
-  max-width: 130px;
-  /* Altura automática para mantener la proporción */
-  height: auto;
-  /* Elimina un pequeño espacio extra que a veces queda debajo de las imágenes */
-  display: block;
-  /* Efecto suave al pasar el mouse */
-  transition: opacity 0.3s ease;
-}
-
-.logo img:hover {
-  /* Se vuelve un poquito transparente al pasar el mouse para indicar que es un enlace */
-  opacity: 0.9;
-}
-/* =========================================
-   ESTILOS DEL EQUIPO (DESPLEGABLE)
-   ========================================= */
-
-/* Estado oculto (Por defecto) */
+/*ESTILOS DEL EQUIPO (DESPLEGABLE) */
 .team-hidden {
   display: none;
   opacity: 0;
   transition: opacity 1.2s ease;
 }
 
-/* Estado visible (Lo activaremos con JS) */
 .team-visible {
   display: block;
   opacity: 1;
   margin-top: 60px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--border-color);
   padding-top: 40px;
   animation: fadeIn 1.2s ease-in-out;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .team-title {
@@ -551,15 +527,19 @@ ul {
   max-width: 300px;
 }
 
-/* Foto redonda del miembro */
 .member-photo {
   width: 150px;
   height: 150px;
   margin: 0 auto 20px;
-  border-radius: 50%; /* Hace la foto redonda */
+  border-radius: 50%;
   overflow: hidden;
-  border: 4px solid var(--accent-color); /* Borde verde */
+  border: 4px solid var(--accent-color);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s;
+}
+
+.team-member:hover .member-photo {
+    border-color: var(--primary-color);
 }
 
 .member-photo img {
@@ -584,7 +564,7 @@ ul {
 }
 
 .member-legend {
-  font-style: italic; /* Letra cursiva para la leyenda */
+  font-style: italic;
   color: #666;
   font-size: 0.9rem;
   margin-bottom: 20px;
